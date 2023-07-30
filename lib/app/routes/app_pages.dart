@@ -32,6 +32,8 @@ import '../modules/myaccount_mahasiswa/bindings/myaccount_mahasiswa_binding.dart
 import '../modules/myaccount_mahasiswa/views/myaccount_mahasiswa_view.dart';
 import '../modules/myactivity_mahasiswa/bindings/myactivity_mahasiswa_binding.dart';
 import '../modules/myactivity_mahasiswa/views/myactivity_mahasiswa_view.dart';
+import '../modules/myorganization_mahasiswa/bindings/myorganization_mahasiswa_binding.dart';
+import '../modules/myorganization_mahasiswa/views/myorganization_mahasiswa_view.dart';
 import '../modules/organization_mahasiswa/bindings/organization_mahasiswa_binding.dart';
 import '../modules/organization_mahasiswa/views/organization_mahasiswa_view.dart';
 import '../modules/post_mahasiswa/bindings/post_mahasiswa_binding.dart';
@@ -148,8 +150,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CHANGE_PASSWORD,
-      page: () => const ChangePasswordView(),
+      page: () => ChangePasswordView(),
       binding: ChangePasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.MYORGANIZATION_MAHASISWA,
+      page: () => const MyorganizationMahasiswaView(),
+      binding: MyorganizationMahasiswaBinding(),
     ),
     GetPage(
       name: _Paths.EDIT_DATA_DIRI_MAHASISWA,

@@ -6,6 +6,7 @@ import 'app/modules/detail_event_mahasiswa/views/detail_event_mahasiswa_view.dar
 import 'app/modules/detail_organization_mahasiswa/views/detail_organization_mahasiswa_view.dart';
 import 'app/modules/event_mahasiswa/views/event_mahasiswa_view.dart';
 
+import 'app/modules/myaccount_mahasiswa/views/myaccount_mahasiswa_view.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
@@ -14,7 +15,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       title: "Maibo",
       // initialRoute: AppPages.INITIAL,
-      home: DetailOrganizationMahasiswaView(),
+      home: MyaccountMahasiswaView(),
       getPages: AppPages.routes,
     ),
   );

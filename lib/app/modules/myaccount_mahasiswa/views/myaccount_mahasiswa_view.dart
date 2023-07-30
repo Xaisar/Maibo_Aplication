@@ -97,28 +97,36 @@ class MyaccountMahasiswaView extends GetView<MyaccountMahasiswaController> {
                     const SizedBox(height: 15),
                     //akun
                     GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(Routes.DETAIL_AKUN_MAHASISWA);
+                        },
                         child: const ListItemMenu(
                             icon: "assets/icons/User.png",
                             name: "Kelola Akun")),
                     const SizedBox(height: 10),
                     //data pribadi
                     GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(Routes.DATA_DIRI_MAHASISWA);
+                        },
                         child: const ListItemMenu(
                             icon: "assets/icons/Pribadi.png",
                             name: "Data Pribadi")),
                     const SizedBox(height: 10),
                     //My Organization
                     GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(Routes.MYORGANIZATION_MAHASISWA);
+                        },
                         child: const ListItemMenu(
                             icon: "assets/icons/Organization.png",
                             name: "My Organization")),
                     const SizedBox(height: 10),
                     //Riwayat Event
                     GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(Routes.RIWAYAT_EVENT_MAHASISWA);
+                        },
                         child: const ListItemMenu(
                             icon: "assets/icons/Riwayat.png",
                             name: "Riwayat Event"))
@@ -127,6 +135,7 @@ class MyaccountMahasiswaView extends GetView<MyaccountMahasiswaController> {
             //umum
             Expanded(
                 child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
               color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,

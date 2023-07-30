@@ -18,6 +18,7 @@ dev_dependencies:
   flutter_spinkit: ^5.2.0
   flutter_launcher_icons: ^0.13.1
   table_calendar: ^3.0.9
+  convex_bottom_bar: ^3.2.0
   flutter_lints: ^2.0.0
   flutter_test: 
     sdk: flutter

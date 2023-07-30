@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
+import 'package:maibo/theme.dart';
 import 'package:get/get.dart';
 
 import '../controllers/data_diri_mahasiswa_controller.dart';
@@ -9,15 +10,37 @@ class DataDiriMahasiswaView extends GetView<DataDiriMahasiswaController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('DataDiriMahasiswaView'),
-        centerTitle: true,
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+            )),
+        title: Text("Back",
+            style: GoogleFonts.dmSans(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w500)),
+        backgroundColor: blue,
+        elevation: 0,
       ),
-      body: const Center(
-        child: Text(
-          'DataDiriMahasiswaView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: SingleChildScrollView(
+        child: Padding(
+            padding: EdgeInsets.all(15),
+            child: Column(children: [
+              Text("Data Mahasiswa",
+                  style: GoogleFonts.dmSans(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold)),
+              const SizedBox(
+                height: 15,
+              ),
+            ])),
       ),
     );
   }

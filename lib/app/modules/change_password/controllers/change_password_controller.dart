@@ -1,23 +1,11 @@
 import 'package:get/get.dart';
 
 class ChangePasswordController extends GetxController {
-  //TODO: Implement ChangePasswordController
+  var eye1 = true.obs;
+  var eye2 = true.obs;
+  var eye3 = true.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void togglePasswordVisibility(nilai) {
+    nilai.value = !nilai.value;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
