@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maibo/app/routes/app_pages.dart';
 import 'package:maibo/theme.dart';
 
 class ListEventOrganization extends GetView {
@@ -17,7 +18,9 @@ class ListEventOrganization extends GetView {
       },
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(Routes.DETAIL_EVENT_MAHASISWA);
+          },
           child: Container(
             color: Colors.white,
             child: Row(

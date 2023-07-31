@@ -14,8 +14,8 @@ void main() {
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Maibo",
-      // initialRoute: AppPages.INITIAL,
-      home: MyaccountMahasiswaView(),
+      initialRoute: AppPages.INITIAL,
+      // home: MyaccountMahasiswaView(),
       getPages: AppPages.routes,
     ),
   );

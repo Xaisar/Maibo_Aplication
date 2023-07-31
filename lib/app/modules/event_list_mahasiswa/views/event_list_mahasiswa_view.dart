@@ -19,7 +19,18 @@ class EventListMahasiswaView extends GetView<EventListMahasiswaController> {
         );
       },
       itemBuilder: (context, index) {
-        return const EventListItemView();
+        return (index == 9
+            ? Column(
+                children: [
+                  EventListItemView(),
+                  Container(
+                    color: Colors.white,
+                    height: 22,
+                    width: Get.width,
+                  )
+                ],
+              )
+            : EventListItemView());
       },
     );
   }

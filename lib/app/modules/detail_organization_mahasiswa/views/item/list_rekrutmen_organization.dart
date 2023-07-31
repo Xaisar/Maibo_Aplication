@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maibo/theme.dart';
 
+import '../../../../routes/app_pages.dart';
+
 class ListRekrutmenOrganization extends GetView {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,9 @@ class ListRekrutmenOrganization extends GetView {
       },
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(Routes.DETAIL_REKRUTMEN_MAHASISWA);
+          },
           child: Container(
             color: Colors.white,
             child: Row(

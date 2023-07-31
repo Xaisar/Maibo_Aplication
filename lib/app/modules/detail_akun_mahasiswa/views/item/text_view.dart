@@ -19,6 +19,8 @@ class TextView extends GetView {
                 fontSize: 14,
                 fontWeight: FontWeight.w500)),
         Container(
+          width: Get.width,
+          margin: const EdgeInsets.only(bottom: 10, top: 5),
           padding: const EdgeInsets.only(left: 15, top: 8, bottom: 8),
           decoration: BoxDecoration(
               border: Border.all(color: grey1, width: 1),

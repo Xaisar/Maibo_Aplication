@@ -35,7 +35,7 @@ class ChangePasswordView extends GetView<ChangePasswordController> {
         body: Padding(
             padding: EdgeInsets.all(15),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 FieldPassword(
                   name: "Old Password",

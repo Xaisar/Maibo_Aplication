@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maibo/app/routes/app_pages.dart';
 import 'package:maibo/theme.dart';
 
 import 'package:get/get.dart';
@@ -10,7 +11,9 @@ class EventListItemView extends GetView {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(Routes.DETAIL_EVENT_MAHASISWA);
+      },
       child: Container(
         color: Colors.white,
         child: Row(

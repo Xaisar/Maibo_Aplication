@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maibo/app/routes/app_pages.dart';
 import 'package:maibo/theme.dart';
 
 import 'package:get/get.dart';
@@ -59,7 +60,9 @@ class DetailEventMahasiswaView extends GetView<DetailEventMahasiswaController> {
                   //     const AssetImage("assets/images/Gambarwhatsapp.jpg")
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(Routes.FULL_IMAGE);
+                    },
                     icon: const CircleAvatar(
                       backgroundColor: Colors.white,
                       radius: 20,
@@ -151,7 +154,7 @@ class DetailEventMahasiswaView extends GetView<DetailEventMahasiswaController> {
                           decoration: const BoxDecoration(
                               color: Colors.red,
                               borderRadius:
-                                  const BorderRadius.all(Radius.circular(8))),
+                                  BorderRadius.all(Radius.circular(8))),
                           child: Text(
                             "Lomba",
                             textAlign: TextAlign.center,

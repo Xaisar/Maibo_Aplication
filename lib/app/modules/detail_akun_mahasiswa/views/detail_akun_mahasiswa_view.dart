@@ -31,13 +31,15 @@ class DetailAkunMahasiswaView extends GetView<DetailAkunMahasiswaController> {
           elevation: 0,
         ),
         body: Container(
-          margin: const EdgeInsets.all(15),
+          width: Get.width,
+          margin: const EdgeInsets.only(left: 15, top: 15, right: 15),
           decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(12))),
           child: Column(
             children: [
               Container(
+                width: Get.width,
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 decoration: BoxDecoration(
                     border:
@@ -51,7 +53,7 @@ class DetailAkunMahasiswaView extends GetView<DetailAkunMahasiswaController> {
                     const SizedBox(height: 15),
                     //nama
                     Text(
-                      "",
+                      "Xavier Is'ad Ariel",
                       style: GoogleFonts.dmSans(
                           color: Colors.black,
                           fontSize: 18,
@@ -61,6 +63,7 @@ class DetailAkunMahasiswaView extends GetView<DetailAkunMahasiswaController> {
                 ),
               ),
               Container(
+                width: Get.width,
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
                     border:
@@ -71,19 +74,19 @@ class DetailAkunMahasiswaView extends GetView<DetailAkunMahasiswaController> {
                     //email
                     TextView(
                       title: "Email",
-                      text: "",
+                      text: "arilex36@gmailcom",
                     ),
                     SizedBox(height: 5),
                     //contact
                     TextView(
                       title: "Contact",
-                      text: "",
+                      text: "0853384749486",
                     ),
                     SizedBox(height: 5),
                     //type
                     TextView(
                       title: "Type User",
-                      text: "",
+                      text: "Mahasiswa",
                     )
                   ],
                 ),
@@ -92,7 +95,7 @@ class DetailAkunMahasiswaView extends GetView<DetailAkunMahasiswaController> {
                   padding: EdgeInsets.symmetric(vertical: 15),
                   child: ElevatedButton(
                     onPressed: () {
-                      Get.offAllNamed(Routes.CHANGE_PASSWORD);
+                      Get.toNamed(Routes.CHANGE_PASSWORD);
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red,

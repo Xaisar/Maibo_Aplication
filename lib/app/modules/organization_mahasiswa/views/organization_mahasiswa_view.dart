@@ -24,7 +24,18 @@ class OrganizationMahasiswaView
                 return const Divider(height: 3);
               },
               itemBuilder: (context, index) {
-                return const OrganizationItemView();
+                return (index == 9
+                    ? Column(
+                        children: [
+                          OrganizationItemView(),
+                          Container(
+                            color: Colors.white,
+                            height: 22,
+                            width: Get.width,
+                          )
+                        ],
+                      )
+                    : OrganizationItemView());
               }),
         ));
   }

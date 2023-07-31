@@ -9,7 +9,7 @@ class LoadingView extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: grey2,
+        backgroundColor: Colors.white,
         body: Center(
             child: SpinKitFoldingCube(
           color: blue,

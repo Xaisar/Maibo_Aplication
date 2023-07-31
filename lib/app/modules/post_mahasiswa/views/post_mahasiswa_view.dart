@@ -25,7 +25,18 @@ class PostMahasiswaView extends GetView<PostMahasiswaController> {
           },
           itemCount: 5,
           itemBuilder: (context, index) {
-            return PostItemView();
+            return (index == 4
+                ? Column(
+                    children: [
+                      PostItemView(),
+                      Container(
+                        color: Colors.white,
+                        height: 22,
+                        width: Get.width,
+                      )
+                    ],
+                  )
+                : PostItemView());
           },
         ),
       ),

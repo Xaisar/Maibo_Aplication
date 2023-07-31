@@ -105,14 +105,12 @@ class MyaccountMahasiswaView extends GetView<MyaccountMahasiswaController> {
                             name: "Kelola Akun")),
                     const SizedBox(height: 10),
                     //data pribadi
-                    GestureDetector(
-                        onTap: () {
-                          Get.toNamed(Routes.DATA_DIRI_MAHASISWA);
-                        },
-                        child: const ListItemMenu(
-                            icon: "assets/icons/Pribadi.png",
-                            name: "Data Pribadi")),
-                    const SizedBox(height: 10),
+                    // GestureDetector(
+                    //     onTap: () {},
+                    //     child: const ListItemMenu(
+                    //         icon: "assets/icons/Pribadi.png",
+                    //         name: "Data Pribadi")),
+                    // const SizedBox(height: 10),
                     //My Organization
                     GestureDetector(
                         onTap: () {
@@ -184,6 +182,11 @@ class MyaccountMahasiswaView extends GetView<MyaccountMahasiswaController> {
                           fontSize: 17,
                           fontWeight: FontWeight.bold),
                     ),
+                  ),
+                  Container(
+                    color: Colors.white,
+                    height: 22,
+                    width: Get.width,
                   )
                 ],
               ),

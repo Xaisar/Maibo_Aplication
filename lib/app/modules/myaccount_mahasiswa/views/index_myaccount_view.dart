@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:maibo/app/modules/event_mahasiswa/views/event_mahasiswa_view.dart';
+import 'package:maibo/app/modules/myaccount_mahasiswa/views/myaccount_mahasiswa_view.dart';
 
 import '../../../views/views/loading_view.dart';
 
-class IndexEventView extends GetView {
-  const IndexEventView({Key? key}) : super(key: key);
+class IndexMyaccountView extends GetView {
+  const IndexMyaccountView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -16,7 +16,7 @@ class IndexEventView extends GetView {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const LoadingView();
           } else {
-            return EventMahasiswaView();
+            return const MyaccountMahasiswaView();
           }
         });
   }

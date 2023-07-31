@@ -70,12 +70,12 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.EVENT_MAHASISWA,
-      page: () => const EventMahasiswaView(),
+      page: () => EventMahasiswaView(),
       binding: EventMahasiswaBinding(),
     ),
     GetPage(
       name: _Paths.HOME_MAHASISWA,
-      page: () => const HomeMahasiswaView(),
+      page: () => HomeMahasiswaView(),
       binding: HomeMahasiswaBinding(),
     ),
     GetPage(
@@ -140,7 +140,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DETAIL_ORGANIZATION_MAHASISWA,
-      page: () => const DetailOrganizationMahasiswaView(),
+      page: () => DetailOrganizationMahasiswaView(),
       binding: DetailOrganizationMahasiswaBinding(),
     ),
     GetPage(

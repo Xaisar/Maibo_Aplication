@@ -13,7 +13,9 @@ class FullImageView extends GetView<FullImageController> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
             icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,

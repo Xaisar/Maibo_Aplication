@@ -21,7 +21,18 @@ class RekrutmenListMahasiswaView
         );
       },
       itemBuilder: (context, index) {
-        return const RekrutmenListItemView();
+        return (index == 9
+            ? Column(
+                children: [
+                  RekrutmenListItemView(),
+                  Container(
+                    color: Colors.white,
+                    height: 22,
+                    width: Get.width,
+                  )
+                ],
+              )
+            : RekrutmenListItemView());
       },
     );
   }
