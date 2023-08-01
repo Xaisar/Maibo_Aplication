@@ -1,23 +1,11 @@
 import 'package:get/get.dart';
 
+import '../../../data/models/login_model.dart';
+
 class LoginController extends GetxController {
   var eye = true.obs;
-
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
+  // late Login login;
+  var login = Login();
   void togglePasswordVisibility() {
     eye.value = !eye.value;
   }

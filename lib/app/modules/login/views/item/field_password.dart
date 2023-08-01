@@ -27,7 +27,9 @@ class FieldPassword extends GetView {
                 ),
                 TextField(
                   keyboardType: TextInputType.visiblePassword,
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    control.login.password = value;
+                  },
                   obscureText: control.eye.value,
                   style: GoogleFonts.dmSans(fontSize: 14),
                   decoration: InputDecoration(

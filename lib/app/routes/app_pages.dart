@@ -12,6 +12,8 @@ import '../modules/detail_event_mahasiswa/bindings/detail_event_mahasiswa_bindin
 import '../modules/detail_event_mahasiswa/views/detail_event_mahasiswa_view.dart';
 import '../modules/detail_organization_mahasiswa/bindings/detail_organization_mahasiswa_binding.dart';
 import '../modules/detail_organization_mahasiswa/views/detail_organization_mahasiswa_view.dart';
+import '../modules/detail_post_mahasiswa/bindings/detail_post_mahasiswa_binding.dart';
+import '../modules/detail_post_mahasiswa/views/detail_post_mahasiswa_view.dart';
 import '../modules/detail_rekrutmen_mahasiswa/bindings/detail_rekrutmen_mahasiswa_binding.dart';
 import '../modules/detail_rekrutmen_mahasiswa/views/detail_rekrutmen_mahasiswa_view.dart';
 import '../modules/edit_data_diri_mahasiswa/bindings/edit_data_diri_mahasiswa_binding.dart';
@@ -162,6 +164,11 @@ class AppPages {
       name: _Paths.EDIT_DATA_DIRI_MAHASISWA,
       page: () => const EditDataDiriMahasiswaView(),
       binding: EditDataDiriMahasiswaBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_POST_MAHASISWA,
+      page: () => const DetailPostMahasiswaView(),
+      binding: DetailPostMahasiswaBinding(),
     ),
   ];
 }

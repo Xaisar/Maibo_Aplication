@@ -76,15 +76,18 @@ class AboutUsView extends GetView<AboutUsController> {
                           fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(
-                      height: 4,
+                      height: 5,
                     ),
                     Text(
-                      "Kami berharap anda dapat mengembangkan minat dan bakat anda",
+                      "Kami berharap anda dapat mengembangkan minat dan bakat anda melalui aplikasi yang kami kembangkan ini",
                       overflow: TextOverflow.clip,
                       style: GoogleFonts.dmSans(
                           color: Colors.black,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(
+                      height: 15,
                     ),
                     Align(
                       alignment: Alignment.topRight,
@@ -93,12 +96,9 @@ class AboutUsView extends GetView<AboutUsController> {
                         overflow: TextOverflow.clip,
                         style: GoogleFonts.dmSans(
                             color: Colors.black,
-                            fontSize: 14,
+                            fontSize: 15,
                             fontWeight: FontWeight.w500),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 15,
                     ),
                   ],
                 ),

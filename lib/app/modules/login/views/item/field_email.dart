@@ -27,7 +27,9 @@ class FieldEmail extends GetView {
             ),
             TextField(
               keyboardType: TextInputType.emailAddress,
-              onChanged: (value) {},
+              onChanged: (value) {
+                control.login.email = value;
+              },
               style: GoogleFonts.dmSans(fontSize: 14),
               decoration: InputDecoration(
                   contentPadding:

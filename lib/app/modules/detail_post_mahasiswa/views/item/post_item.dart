@@ -87,7 +87,6 @@ class PostItemView extends GetView {
             ],
           ),
         ),
-        //deskripsi
         Container(
           color: Colors.white,
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
@@ -109,37 +108,14 @@ class PostItemView extends GetView {
               style: GoogleFonts.dmSans(color: Colors.black, fontSize: 13)),
         ),
         Container(
-            color: Colors.white,
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            child: Text("Semua Komentar",
-                textAlign: TextAlign.left,
-                // overflow: TextOverflow.ellipsis,
-                // maxLines: 2,
-                style: GoogleFonts.dmSans(color: Colors.black, fontSize: 13))),
-        //chat
-        Container(
-            padding: const EdgeInsets.only(left: 15, right: 15),
-            width: Get.width,
-            color: Colors.white,
-            child: Row(
-              children: [
-                const CircleAvatar(
-                  radius: 15,
-                  backgroundImage: AssetImage("assets/images/image1.jpg"),
-                ),
-                const SizedBox(width: 10),
-                Flexible(
-                  child: TextField(
-                    keyboardType: TextInputType.text,
-                    onChanged: (value) {},
-                    onSubmitted: (value) {},
-                    style: GoogleFonts.dmSans(fontSize: 14),
-                    decoration: InputDecoration(
-                        hintText: 'Balas Pemilik Akun', focusColor: blue),
-                  ),
-                ),
-              ],
-            ))
+          color: Colors.white,
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+          child: Text("Semua Komentar",
+              textAlign: TextAlign.left,
+              // overflow: TextOverflow.ellipsis,
+              // maxLines: 2,
+              style: GoogleFonts.dmSans(color: Colors.black, fontSize: 13)),
+        ),
       ],
     );
   }

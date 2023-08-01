@@ -51,7 +51,7 @@ class LoginView extends GetView<LoginController> {
                   color: Colors.white,
                   borderRadius: BorderRadiusDirectional.only(
                       topStart: Radius.circular(40),
-                      topEnd: Radius.circular(40))),
+                      topEnd: Radius.circular(40))), 
               child: Padding(
                 padding: const EdgeInsets.only(top: 40, left: 25, right: 25),
                 child: Column(
@@ -89,7 +89,9 @@ class LoginView extends GetView<LoginController> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(12)))),
                           onPressed: () {
-                            Get.offNamed(Routes.HOME_MAHASISWA);
+                            // Get.offNamed(Routes.HOME_MAHASISWA);
+                            print(loginc.login.email);
+                            print(loginc.login.password);
                           },
                           child: Container(
                             width: Get.width,

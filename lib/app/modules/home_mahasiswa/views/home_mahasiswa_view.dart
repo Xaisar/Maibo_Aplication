@@ -43,7 +43,7 @@ class HomeMahasiswaView extends GetView<HomeMahasiswaController> {
             items: const [
               TabItem(icon: Icons.home_filled, title: "home"),
               TabItem(icon: Icons.event, title: "Event"),
-              TabItem(icon: Icons.people_alt, title: "Organization"),
+              TabItem(icon: Icons.home_work_rounded, title: "Organization"),
               // TabItem(icon: Icons.calendar_month, title: "My Activity"),
               TabItem(icon: Icons.person, title: "Accout"),
             ],

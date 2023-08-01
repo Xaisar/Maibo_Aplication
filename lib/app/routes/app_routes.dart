@@ -26,6 +26,7 @@ abstract class Routes {
   static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
   static const MYORGANIZATION_MAHASISWA = _Paths.MYORGANIZATION_MAHASISWA;
   static const EDIT_DATA_DIRI_MAHASISWA = _Paths.EDIT_DATA_DIRI_MAHASISWA;
+  static const DETAIL_POST_MAHASISWA = _Paths.DETAIL_POST_MAHASISWA;
 }
 
 abstract class _Paths {
@@ -52,4 +53,5 @@ abstract class _Paths {
   static const CHANGE_PASSWORD = '/change-password';
   static const MYORGANIZATION_MAHASISWA = '/myorganization-mahasiswa';
   static const EDIT_DATA_DIRI_MAHASISWA = '/edit-data-diri-mahasiswa';
+  static const DETAIL_POST_MAHASISWA = '/detail-post-mahasiswa';
 }
