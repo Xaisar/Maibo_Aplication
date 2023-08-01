@@ -92,7 +92,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.POST_MAHASISWA,
-      page: () => const PostMahasiswaView(),
+      page: () => PostMahasiswaView(),
       binding: PostMahasiswaBinding(),
     ),
     GetPage(
@@ -167,7 +167,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DETAIL_POST_MAHASISWA,
-      page: () => const DetailPostMahasiswaView(),
+      page: () => DetailPostMahasiswaView(),
       binding: DetailPostMahasiswaBinding(),
     ),
   ];

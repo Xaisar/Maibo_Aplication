@@ -7,7 +7,7 @@ class User {
 
   static var obs;
 
-  User({this.id, this.email});
+  User({this.id, this.email, this.mahasiswa});
 
   User.fromJson(Map<String, dynamic> json) {
     id = json['id'];

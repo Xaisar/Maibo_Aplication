@@ -3,11 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:maibo/theme.dart';
 import 'package:get/get.dart';
 
-class CommentPostView extends GetView {
-  const CommentPostView({super.key});
+import '../../../../data/models/comment_model.dart';
+
+class CommentPost extends GetView {
+  Comment? balas;
+  final gambar;
+  CommentPost({super.key, this.balas, this.gambar});
 
   @override
   Widget build(BuildContext context) {
+    var nama_mahasiswa = balas?.mahasiswa?.nama;
+    var pesan = balas?.comment;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       decoration: BoxDecoration(
@@ -23,12 +29,12 @@ class CommentPostView extends GetView {
             children: [
               Row(
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 15,
-                    backgroundImage: AssetImage("assets/images/image3.jpg"),
+                    backgroundImage: AssetImage("$gambar"),
                   ),
                   const SizedBox(width: 10),
-                  Text("Xavier Is'ad Ariel",
+                  Text("$nama_mahasiswa",
                       style: GoogleFonts.dmSans(
                           color: Colors.black,
                           fontSize: 16,
@@ -44,7 +50,7 @@ class CommentPostView extends GetView {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(width: 40),
-              Text("Halo Mas bro apa kabar?",
+              Text("$pesan",
                   style: GoogleFonts.dmSans(
                       color: Colors.black,
                       fontSize: 13,

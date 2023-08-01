@@ -5,7 +5,7 @@ class Prodi {
   String? nama;
   Jurusan? jurusan;
 
-  Prodi({this.id, this.nama});
+  Prodi({this.id, this.nama, this.jurusan});
 
   Prodi.fromJson(Map<String, dynamic> json) {
     id = json['id'];

@@ -24,4 +24,4 @@ List<Color> tag = [
 //versi aplikasi
 const String versi = "1.0.1";
 //Link API
-const String link = "http://127.0.0.1:8000/";
+const String link = "http://192.168.222.85:8080/";

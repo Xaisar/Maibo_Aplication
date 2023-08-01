@@ -4,7 +4,7 @@ class Like {
   bool? suka;
   Mahasiswa? mahasiswa;
 
-  Like({this.suka});
+  Like({this.suka, this.mahasiswa});
 
   Like.fromJson(Map<String, dynamic> json) {
     suka = json['suka'];

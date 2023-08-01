@@ -10,7 +10,7 @@ class IndexOrganizationView extends GetView {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: Future.delayed(const Duration(seconds: 10)),
+        future: Future.delayed(const Duration(seconds: 3)),
         // future: Future.sync(() {}).then((value) {}),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {

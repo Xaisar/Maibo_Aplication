@@ -6,7 +6,7 @@ class Comment {
   String? tanggal;
   Mahasiswa? mahasiswa;
 
-  Comment({this.id, this.comment, this.tanggal});
+  Comment({this.id, this.comment, this.tanggal, this.mahasiswa});
 
   Comment.fromJson(Map<String, dynamic> json) {
     id = json['id'];

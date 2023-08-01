@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'Item/post_item.dart';
 import 'package:maibo/theme.dart';
 import 'package:get/get.dart';
 
 import '../controllers/detail_post_mahasiswa_controller.dart';
 import 'item/comment_post.dart';
+import 'item/post_item1.dart';
 
 class DetailPostMahasiswaView extends GetView<DetailPostMahasiswaController> {
-  const DetailPostMahasiswaView({Key? key}) : super(key: key);
+  DetailPostMahasiswaView({Key? key}) : super(key: key);
+  final detailpostc = DetailPostMahasiswaController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,16 +37,57 @@ class DetailPostMahasiswaView extends GetView<DetailPostMahasiswaController> {
           children: [
             Align(alignment: Alignment.bottomCenter, child: textfield()),
             ListView.builder(
-                itemCount: 5,
+                itemCount: 1,
                 itemBuilder: (context, index) {
-                  return (index == 0
-                      ? Column(children: [PostItemView(), CommentPostView()])
-                      : (index == 4
-                          ? Column(children: [CommentPostView(), textfield()])
-                          : CommentPostView()));
+                  // return (index == 0
+                  //     ? Column(children: [
+                  //         ItemView(
+                  //           post: detailpostc.post,
+                  //         ),
+                  //         CommentPost(
+                  //             balas: detailpostc.post.comment?[index],
+                  //             gambar: "assets/images/image2.jpg"),
+                  //         textfield()
+                  //       ])
+                  //     : Column(children: [
+                  //         CommentPost(
+                  //           balas: detailpostc.post.comment?[index],
+                  //           gambar: "assets/images/image2.jpg",
+                  //         ),
+                  //         textfield()
+                  //       ]));
+                  return Column(children: [
+                    ItemView(
+                      post: detailpostc.post,
+                    ),
+                    CommentPost(
+                        balas: detailpostc.post.comment?[index],
+                        gambar: "assets/images/image2.jpg"),
+                    CommentPost(
+                        balas: detailpostc.post.comment?[1],
+                        gambar: "assets/images/image1.jpg"),
+                    CommentPost(
+                        balas: detailpostc.post.comment?[2],
+                        gambar: "assets/images/image2.jpg"),
+                    CommentPost(
+                        balas: detailpostc.post.comment?[3],
+                        gambar: "assets/images/image1.jpg"),
+                    textfield(),
+                  ]);
                 })
           ],
-        ));
+        )
+        // body: SingleChildScrollView(
+        //   child: Column(children: [
+        //     PostItem(
+        //       post: detailpostc.post,
+        //     ),
+        //     CommentPostView(),
+        //     CommentPostView(),
+        //     textfield()
+        //   ]),
+        // ),
+        );
   }
 
   Container textfield() {

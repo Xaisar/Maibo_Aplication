@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maibo/app/data/models/postingan_model.dart';
 import 'package:maibo/theme.dart';
 import 'package:maibo/my_flutter_app_icons.dart';
 
 import 'package:get/get.dart';
 
-class PostItemView extends GetView {
-  const PostItemView({super.key});
+// ignore: must_be_immutable
+class ItemView extends GetView {
+  Postingan? post;
+  ItemView({super.key, this.post});
+  List<Color> warna = [Colors.red, grey1];
 
   @override
   Widget build(BuildContext context) {
+    RxInt i = 1.obs;
+    var nama_organisasi = post?.organization?.nama;
+    var gambar_organisasi = post?.organization?.gambar;
+    var gambar = post?.gambar;
+    var deskripsi = post?.deskripsi;
+    var like = post?.like?.length;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,14 +37,14 @@ class PostItemView extends GetView {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                       backgroundColor: Colors.white,
                       radius: 15,
-                      backgroundImage: AssetImage("assets/images/image2.jpg")),
+                      backgroundImage: AssetImage("$gambar_organisasi")),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
-                      "UKM Robotika",
+                      "$nama_organisasi",
                       style: GoogleFonts.dmSans(
                           color: Colors.black,
                           fontSize: 13,
@@ -54,11 +64,12 @@ class PostItemView extends GetView {
         //gambar
         Image(
           fit: BoxFit.fitWidth,
-          image: const AssetImage("assets/images/gambarw.jpg"),
+          image: AssetImage("$gambar"),
           width: Get.width,
           filterQuality: FilterQuality.high,
         ),
         Container(
+          width: Get.width,
           padding: const EdgeInsets.symmetric(horizontal: 10),
           decoration: BoxDecoration(
               color: Colors.white,
@@ -67,13 +78,19 @@ class PostItemView extends GetView {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              IconButton(
-                  onPressed: () {},
+              Obx(() => IconButton(
+                  onPressed: () {
+                    if (i.value == 1) {
+                      i.value = 0;
+                    } else {
+                      i.value = 1;
+                    }
+                  },
                   icon: Icon(
                     MyFlutterApp.heart,
                     size: 20,
-                    color: grey1,
-                  )),
+                    color: warna[i.value],
+                  ))),
               const SizedBox(
                 width: 15,
               ),
@@ -88,9 +105,10 @@ class PostItemView extends GetView {
           ),
         ),
         Container(
+          width: Get.width,
           color: Colors.white,
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-          child: Text("Disukai oleh ",
+          child: Text("Disukai oleh $like Orang",
               textAlign: TextAlign.left,
               // overflow: TextOverflow.ellipsis,
               // maxLines: 2,
@@ -100,8 +118,7 @@ class PostItemView extends GetView {
         Container(
           color: Colors.white,
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-          child: Text(
-              "UKM Robotika Hallo semuanya saya ada di sini jadi bisa kah anda membuat kan saya sesuatu yang bagus dan menarik",
+          child: Text("Pelatihan membuat robot avoid",
               textAlign: TextAlign.left,
               // overflow: TextOverflow.ellipsis,
               // maxLines: 2,

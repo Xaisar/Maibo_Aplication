@@ -19,7 +19,8 @@ class Event {
       this.daftarMulai,
       this.daftarSelesai,
       this.acaraMulai,
-      this.acaraSelesai});
+      this.acaraSelesai,
+      this.organization});
 
   Event.fromJson(Map<String, dynamic> json) {
     id = json['id'];

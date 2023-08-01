@@ -19,7 +19,8 @@ class Rekrutmen {
       this.daftarMulai,
       this.daftarSelesai,
       this.acaraMulai,
-      this.acaraSelesai});
+      this.acaraSelesai,
+      this.organization});
 
   Rekrutmen.fromJson(Map<String, dynamic> json) {
     id = json['id'];

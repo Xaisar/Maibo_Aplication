@@ -8,8 +8,8 @@ import '../controllers/post_mahasiswa_controller.dart';
 import 'Item/post_item.dart';
 
 class PostMahasiswaView extends GetView<PostMahasiswaController> {
-  const PostMahasiswaView({Key? key}) : super(key: key);
-
+  PostMahasiswaView({Key? key}) : super(key: key);
+  final postc = PostMahasiswaController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,12 +23,14 @@ class PostMahasiswaView extends GetView<PostMahasiswaController> {
           separatorBuilder: (context, index) {
             return const Divider(height: 5);
           },
-          itemCount: 5,
+          itemCount: postc.post.length,
           itemBuilder: (context, index) {
-            return (index == 4
+            return (index == postc.post.length - 1
                 ? Column(
                     children: [
-                      PostItemView(),
+                      PostItemView(
+                        postingan: postc.post[index],
+                      ),
                       Container(
                         color: Colors.white,
                         height: 22,
@@ -36,7 +38,7 @@ class PostMahasiswaView extends GetView<PostMahasiswaController> {
                       )
                     ],
                   )
-                : PostItemView());
+                : PostItemView(postingan: postc.post[index]));
           },
         ),
       ),

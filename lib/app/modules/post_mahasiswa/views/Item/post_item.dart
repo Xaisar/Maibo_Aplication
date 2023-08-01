@@ -2,14 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maibo/theme.dart';
 import 'package:maibo/my_flutter_app_icons.dart';
-
+import 'package:maibo/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
+import '../../../../data/models/postingan_model.dart';
+
 class PostItemView extends GetView {
-  const PostItemView({super.key});
+  Postingan? postingan;
+  PostItemView({super.key, this.postingan});
+  List<Color> warna = [Colors.red, grey1];
 
   @override
   Widget build(BuildContext context) {
+    RxInt i = 1.obs;
+    var nama_organisasi = postingan?.organization?.nama;
+    var gambar_organisasi = postingan?.organization?.gambar;
+    var gambar = postingan?.gambar;
+    var deskripsi = postingan?.deskripsi;
+    var like = postingan?.like?.length;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,14 +37,14 @@ class PostItemView extends GetView {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                       backgroundColor: Colors.white,
                       radius: 15,
-                      backgroundImage: AssetImage("assets/images/image2.jpg")),
+                      backgroundImage: AssetImage("$gambar_organisasi")),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
-                      "UKM Robotika",
+                      "$nama_organisasi",
                       style: GoogleFonts.dmSans(
                           color: Colors.black,
                           fontSize: 13,
@@ -54,7 +64,7 @@ class PostItemView extends GetView {
         //gambar
         Image(
           fit: BoxFit.fitWidth,
-          image: const AssetImage("assets/images/gambarw.jpg"),
+          image: AssetImage("$gambar"),
           width: Get.width,
           filterQuality: FilterQuality.high,
         ),
@@ -67,13 +77,19 @@ class PostItemView extends GetView {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              IconButton(
-                  onPressed: () {},
+              Obx(() => IconButton(
+                  onPressed: () {
+                    if (i.value == 1) {
+                      i.value = 0;
+                    } else {
+                      i.value = 1;
+                    }
+                  },
                   icon: Icon(
                     MyFlutterApp.heart,
                     size: 20,
-                    color: grey1,
-                  )),
+                    color: warna[i.value],
+                  ))),
               const SizedBox(
                 width: 15,
               ),
@@ -89,27 +105,34 @@ class PostItemView extends GetView {
         ),
         //deskripsi
         Container(
+          width: Get.width,
           color: Colors.white,
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-          child: Text("Disukai oleh ",
+          child: Text("Disukai oleh $like orang ",
               textAlign: TextAlign.left,
               // overflow: TextOverflow.ellipsis,
               // maxLines: 2,
               style: GoogleFonts.dmSans(color: Colors.black, fontSize: 13)),
         ),
         //deskripsi
-        Container(
-          color: Colors.white,
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-          child: Text(
-              "UKM Robotika Hallo semuanya saya ada di sini jadi bisa kah anda membuat kan saya sesuatu yang bagus dan menarik",
-              textAlign: TextAlign.left,
-              // overflow: TextOverflow.ellipsis,
-              // maxLines: 2,
-              style: GoogleFonts.dmSans(color: Colors.black, fontSize: 13)),
+        GestureDetector(
+          onTap: () {
+            Get.toNamed(Routes.DETAIL_POST_MAHASISWA);
+          },
+          child: Container(
+            color: Colors.white,
+            width: Get.width,
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            child: Text("$deskripsi",
+                textAlign: TextAlign.left,
+                // overflow: TextOverflow.ellipsis,
+                // maxLines: 2,
+                style: GoogleFonts.dmSans(color: Colors.black, fontSize: 13)),
+          ),
         ),
         Container(
             color: Colors.white,
+            width: Get.width,
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
             child: Text("Semua Komentar",
                 textAlign: TextAlign.left,
@@ -120,7 +143,9 @@ class PostItemView extends GetView {
         Container(
             padding: const EdgeInsets.only(left: 15, right: 15),
             width: Get.width,
-            color: Colors.white,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border(top: BorderSide(color: grey1, width: 1))),
             child: Row(
               children: [
                 const CircleAvatar(

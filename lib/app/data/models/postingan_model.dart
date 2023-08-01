@@ -8,9 +8,15 @@ class Postingan {
   String? deskripsi;
   Organization? organization;
   List<Like>? like = [];
-  List<Comment> comment = [];
+  List<Comment>? comment = [];
 
-  Postingan({this.id, this.gambar, this.deskripsi});
+  Postingan(
+      {this.id,
+      this.gambar,
+      this.deskripsi,
+      this.like,
+      this.comment,
+      this.organization});
 
   Postingan.fromJson(Map<String, dynamic> json) {
     id = json['id'];

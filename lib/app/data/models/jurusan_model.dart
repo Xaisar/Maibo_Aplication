@@ -5,7 +5,7 @@ class Jurusan {
   String? nama;
   Kampus? kampus;
 
-  Jurusan({this.id, this.nama});
+  Jurusan({this.id, this.nama, this.kampus});
 
   Jurusan.fromJson(Map<String, dynamic> json) {
     id = json['id'];
